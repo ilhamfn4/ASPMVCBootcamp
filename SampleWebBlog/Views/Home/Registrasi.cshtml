@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Registrasi";
+}
+
+<h2>Registrasi</h2>
+
+<p>Selamat datang @ViewBag.Nama di halaman Registrasi Pengguna</p>
+<p>Email anda adalah : @ViewBag.Email</p>
+
+<ul>
+    @foreach(string nama in ViewBag.ListNama)
+    {
+        <li>@nama</li>
+    }
+</ul>
+
+<form method="POST" action="@Url.Action("FormRegistrasi","Home")">
+    <div class="form-group">
+        <label for="firstname">Firstname:</label>
+        <input type="text" class="form-control" name="firstname" />
+    </div>
+    <div class="form-group">
+        <label for="lastname">Lastname:</label>
+        <input type="text" class="form-control" name="lastname" />
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" name="email" />
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
